@@ -70,6 +70,7 @@
   }
 
   function downloadBlock(m) {
+    const smart = A.smartlinkUrl();
     const rows = (m.parts || []).map(function (p) {
       return (
         '<tr>' +
@@ -87,7 +88,14 @@
 
     return (
       '<section class="section" id="download">' +
-        '<h2 class="section__title">Download Links</h2>' +
+        '<div class="section__head">' +
+          '<h2 class="section__title">Download Links</h2>' +
+          (smart
+            ? '<a class="btn btn--primary" href="' + A.esc(smart) + '" target="_blank" rel="nofollow noopener">' +
+              '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 16l-5-5h3V4h4v7h3zM5 18h14v2H5z"/></svg>' +
+              'Fast Download</a>'
+            : '') +
+        '</div>' +
         '<div class="table-wrap">' +
           '<table class="dl-table">' +
             '<thead><tr><th>Part</th><th>Quality</th><th>Size</th><th>Link</th></tr></thead>' +

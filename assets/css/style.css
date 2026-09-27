@@ -287,6 +287,8 @@ svg { width: 1em; height: 1em; }
 
 /* ── Ad slots ──────────────────────────────────────────────────────── */
 .ad-slot { margin: 26px auto; text-align: center; }
+.home-top-ad { padding-top: 14px; }
+.home-top-ad .ad-slot { margin: 0 auto; }
 .ad-slot--content { margin: 26px 0; }
 .ad-slot--player { margin: 20px 0; }
 .ad-slot--sidebar { margin: 0 0 22px; position: sticky; top: calc(var(--header-h) + 16px); }

@@ -21,6 +21,7 @@ window.Ads = (function () {
 
   /* Slot → recommended ad size (wrapper iframe er jonno) */
   const SLOT_SIZES = {
+    homeTop:      { w: 300, h: 250 },
     header:       { w: 728, h: 90  },
     native:       { w: 468, h: 60  },
     inContent:    { w: 336, h: 280 },

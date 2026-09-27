@@ -244,12 +244,19 @@
     const input = $('#searchInput');
     if (input && q) input.value = q;
 
-    /* download / part link click → placeholder message */
+    /* download / part link click → placeholder hole smartlink khulbe */
     document.addEventListener('click', function (e) {
+      const adCfg = (window.SITE_CONFIG && window.SITE_CONFIG.adsterra) || {};
+      const smartlink = adCfg.smartlink && adCfg.smartlinkOnDownload !== false ? adCfg.smartlink : null;
+
       const a = e.target.closest && e.target.closest('a[data-download]');
       if (a && (!a.getAttribute('href') || a.getAttribute('href') === '#')) {
         e.preventDefault();
-        toast('Download link ekhono add kora hoy nai — assets/js/movies.js te parts[].url boshan');
+        if (smartlink) {
+          window.open(smartlink, '_blank', 'noopener');
+        } else {
+          toast('Download link ekhono add kora hoy nai — assets/js/movies.js te parts[].url boshan');
+        }
       }
       const p = e.target.closest && e.target.closest('a[data-player]');
       if (p) {
@@ -271,6 +278,10 @@
     getMovie: getMovie, allGenres: allGenres,
     byDate: byDate, byRating: byRating, byViews: byViews,
     featured: featured, movieCard: movieCard, toast: toast,
+    smartlinkUrl: function () {
+      const c = (window.SITE_CONFIG && window.SITE_CONFIG.adsterra) || {};
+      return (c.smartlink && c.smartlinkOnDownload !== false) ? c.smartlink : null;
+    },
     movies: MOVIES,
   };
 })();

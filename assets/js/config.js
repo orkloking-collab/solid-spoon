@@ -1,25 +1,15 @@
 /* ============================================================================
-   MovieBazar — SITE CONFIGURATION
+   MovieBazar — SITE CONFIGURATION  (Adsterra ads — LIVE)
    ============================================================================
-   ⭐ ADSTERRA ADS — এখানে আপনার ৫টি Adsterra ad unit code পেস্ট করবেন ⭐
+   ⭐ Adsterra ad code gulo niche boshano ache ⭐
 
-   Steps:
-   1. Adsterra dashboard → ekta ad unit create korun (Banner/Native)
-   2. Code copy kore niche matching slot er `code: ''` er moddhe paste korun
-      (single quote er moddhe — multiple line hole backtick ` ` use korun)
-   3. `enabled: false` → `true` korun
-   4. Save. Site e ad automatic chole jabe.
+   • slots.*.code     → oi jaygar ad code (iframe er moddhe load hoy)
+   • global.popunder  → popunder code (page head e inject)
+   • global.socialBar → social bar code (page head e inject)
+   • smartlink        → direct link (download button theke khule)
 
-   Slots (5 unit — different jaygay):
-   • header    → 728×90 leaderboard, header-er niche (sob page)
-   • native    → 468×60 / native banner, movie grid-er majhe (homepage)
-   • inContent → 336×280 rectangle, movie page content-er moddhe
-   • sidebar   → 300×250 rectangle, movie page sidebar (sticky)
-   • footer    → 728×90 banner, footer-er upore (sob page)
-
-   Optional (Adsterra site-wide codes):
-   • popunder → Adsterra Popunder code (head e inject hobe)
-   • socialBar → Adsterra Social Bar code (head e inject hobe)
+   Notun ad unit add korte: matching slot er `code` change korun.
+   Kono ad bondho korte: `enabled: false` korun.
    ========================================================================== */
 
 window.SITE_CONFIG = {
@@ -35,65 +25,102 @@ window.SITE_CONFIG = {
 
   adsterra: {
 
-    /* 👇 true korle sob ad active hobe (code paste korar por) */
-    enabled: false,
+    /* 👇 true = sob ad active */
+    enabled: true,
 
-    /* ── 9 AD UNITS ─────────────────────────────────────────────── */
+    /* ── AD UNITS ─────────────────────────────────────────────────── */
     slots: {
 
+      /* homepage-er AKDOM UPORE (hero-r age) — 300x250 */
+      homeTop: {
+        label: 'Homepage Top Banner (300×250)',
+        code: `<script>
+  atOptions = {
+    'key' : 'a177a1291e4d35df018b182af70a6885',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+<\/script>
+<script src="https://www.highrevenueformat.com/a177a1291e4d35df018b182af70a6885/invoke.js"><\/script>`,
+      },
+
+      /* sob theke upore, full-width (sob page) */
       header: {
         label: 'Header Banner (728×90)',
         code: '',
-        // paste your Adsterra banner code above ↑
       },
 
+      /* movie grid-er majhe — Native Banner */
       native: {
         label: 'In-Grid / Native Banner (468×60)',
-        code: '',
+        code: `<script async="async" data-cfasync="false" src="https://pl31531386.profitableratecpmnetwork.com/f5050107e1df67f96dc4e68e3920382a/invoke.js"><\/script>
+<div id="container-f5050107e1df67f96dc4e68e3920382a"></div>`,
       },
 
-      inContent: {
-        label: 'In-Content Rectangle (336×280)',
-        code: '',
-      },
-
-      sidebar: {
-        label: 'Sidebar Rectangle (300×250)',
-        code: '',
-      },
-
-      footer: {
-        label: 'Footer Banner (728×90)',
-        code: '',
-      },
-
-      /* ── video-er kachakachi (movie page) ─────────────────────── */
+      /* video player-er thik upore */
       playerTop: {
         label: 'Above Player Banner (728×90)',
         code: '',
       },
 
+      /* video player-er thik niche */
       playerBottom: {
         label: 'Below Player Banner (728×90)',
         code: '',
       },
 
-      /* ── screen-er dane-bame floating (sticky) ────────────────── */
+      /* content-er moddhe */
+      inContent: {
+        label: 'In-Content Rectangle (336×280)',
+        code: '',
+      },
+
+      /* movie page sidebar — 300x250 */
+      sidebar: {
+        label: 'Sidebar Rectangle (300×250)',
+        code: `<script>
+  atOptions = {
+    'key' : 'a177a1291e4d35df018b182af70a6885',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+<\/script>
+<script src="https://www.highrevenueformat.com/a177a1291e4d35df018b182af70a6885/invoke.js"><\/script>`,
+      },
+
+      /* screen-er bame floating */
       floatLeft: {
         label: 'Floating Left Skyscraper (160×600)',
         code: '',
       },
 
+      /* screen-er dane floating */
       floatRight: {
         label: 'Floating Right Skyscraper (160×600)',
         code: '',
       },
+
+      /* footer-er upore */
+      footer: {
+        label: 'Footer Banner (728×90)',
+        code: '',
+      },
     },
 
-    /* ── OPTIONAL: site-wide Adsterra scripts ────────────────────── */
+    /* ── SITE-WIDE SCRIPTS (page head e inject hoy) ───────────────── */
     global: {
-      popunder: '',   // e.g. '<script src="//pl000.../..." ...></script>'
-      socialBar: '',
+      popunder: `<script src="https://pl31531384.profitableratecpmnetwork.com/35/71/ac/3571ac16f1ea98c2b680b63a24aebd4a.js"><\/script>`,
+      socialBar: `<script src="https://pl31531385.profitableratecpmnetwork.com/e6/3b/e6/e63be622bf736339d6315a6b7f6b7794.js"><\/script>`,
     },
+
+    /* ── SMARTLINK (download button theke khule) ───────────────────── */
+    smartlink: 'https://www.profitableratecpmnetwork.com/xys2cds8?key=280b8b199517a41973940aa006e49d25',
+
+    /* placeholder download link ('#') e click korle smartlink khulbe */
+    smartlinkOnDownload: true,
   },
 };
