@@ -204,7 +204,11 @@
         '</div>' +
       '</header>' +
 
+      '<div class="ad-slot ad-slot--player" data-ad="playerTop"></div>' +
+
       playerBlock(m) +
+
+      '<div class="ad-slot ad-slot--player" data-ad="playerBottom"></div>' +
 
       '<div class="ad-slot ad-slot--content" data-ad="inContent"></div>' +
 

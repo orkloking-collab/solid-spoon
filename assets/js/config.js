@@ -38,7 +38,7 @@ window.SITE_CONFIG = {
     /* 👇 true korle sob ad active hobe (code paste korar por) */
     enabled: false,
 
-    /* ── 5 AD UNITS ─────────────────────────────────────────────── */
+    /* ── 9 AD UNITS ─────────────────────────────────────────────── */
     slots: {
 
       header: {
@@ -64,6 +64,28 @@ window.SITE_CONFIG = {
 
       footer: {
         label: 'Footer Banner (728×90)',
+        code: '',
+      },
+
+      /* ── video-er kachakachi (movie page) ─────────────────────── */
+      playerTop: {
+        label: 'Above Player Banner (728×90)',
+        code: '',
+      },
+
+      playerBottom: {
+        label: 'Below Player Banner (728×90)',
+        code: '',
+      },
+
+      /* ── screen-er dane-bame floating (sticky) ────────────────── */
+      floatLeft: {
+        label: 'Floating Left Skyscraper (160×600)',
+        code: '',
+      },
+
+      floatRight: {
+        label: 'Floating Right Skyscraper (160×600)',
         code: '',
       },
     },

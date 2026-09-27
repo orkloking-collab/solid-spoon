@@ -188,6 +188,17 @@
       '</div>';
   }
 
+  /* ── Floating side ads (screen-er dane-bame, sob page) ─────────── */
+  function renderFloatingAds() {
+    if (document.querySelector('.ad-float')) return;
+    ['floatLeft', 'floatRight'].forEach(function (name) {
+      const el = document.createElement('div');
+      el.className = 'ad-slot ad-float ad-float--' + name.replace('float', '').toLowerCase();
+      el.setAttribute('data-ad', name);
+      document.body.appendChild(el);
+    });
+  }
+
   /* ── Movie card ─────────────────────────────────────────────────── */
   function movieCard(m) {
     return (
@@ -212,6 +223,7 @@
   function boot() {
     renderHeader();
     renderFooter();
+    renderFloatingAds();
     if (window.Ads && window.Ads.scan) window.Ads.scan();
 
     /* search prefill */

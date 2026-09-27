@@ -65,15 +65,19 @@ window.SITE_CONFIG = {
 };
 ```
 
-**Kothay kothay ad dekhay (5 unit = 5 alada jayga):**
+**Kothay kothay ad dekhay (9 unit = 9 alada jayga):**
 
 | # | Slot | Jayga | Page |
 |---|------|-------|------|
-| 1 | `header` | Header-er niche, full-width banner | sob page |
+| 1 | `header` | Sob theke upore, full-width banner | sob page |
 | 2 | `native` | Movie grid-er majhe (8 number card er por) | homepage + category |
-| 3 | `inContent` | Player-er niche, content-er moddhe (336×280) | movie page |
-| 4 | `sidebar` | Movie page sidebar (sticky) | movie page |
-| 5 | `footer` | Footer-er upore | sob page |
+| 3 | `playerTop` | **Video player-er thik upore** | movie page |
+| 4 | `playerBottom` | **Video player-er thik niche** | movie page |
+| 5 | `inContent` | Content-er moddhe (336×280) | movie page |
+| 6 | `sidebar` | Movie page sidebar (sticky) | movie page |
+| 7 | `floatLeft` | **Screen-er bame floating** (sticky, 160×600, × button soho) | sob page (boro screen) |
+| 8 | `floatRight` | **Screen-er dane floating** (sticky, 160×600, × button soho) | sob page (boro screen) |
+| 9 | `footer` | Footer-er upore | sob page |
 
 Code na deya porjonto sob jaygay ekta **dashed placeholder box** dekhay —
 "kothay ad boshbe" bujha jay, layout nosto hoy na. Code paste + `enabled: true`
@@ -181,17 +185,17 @@ iframe / `<video>` / embed code paste korun (ekhon ekta placeholder dekhay).
 
 ## 🚀 Local e chalano
 
-Kono server lagbe na (double-click index.html ew chole), kintu recomended:
+Kono server lagbe na (double-click index.html ew chole), kintu recomended
+(no-cache server — browser puraton version cache kore rakhbe na):
 
 ```bash
-# Python
-python3 -m http.server 8080
-
-# ba Node
-npx serve .
+python3 tools/serve.py          # → http://localhost:8080
+python3 tools/serve.py 3000     # onno port
 ```
 
-Tarpor browser e: `http://localhost:8080`
+> **Puroton version dekhacche?** Browser-e `Ctrl+Shift+R` (hard refresh)
+> din. Asset gulo te `?v=3` cache-buster add kora ache, ar server
+> `no-store` header pathay — tai notun change shob dekhabe.
 
 ---
 

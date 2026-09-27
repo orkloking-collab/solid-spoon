@@ -21,12 +21,18 @@ window.Ads = (function () {
 
   /* Slot → recommended ad size (wrapper iframe er jonno) */
   const SLOT_SIZES = {
-    header:    { w: 728, h: 90  },
-    native:    { w: 468, h: 60  },
-    inContent: { w: 336, h: 280 },
-    sidebar:   { w: 300, h: 250 },
-    footer:    { w: 728, h: 90  },
+    header:       { w: 728, h: 90  },
+    native:       { w: 468, h: 60  },
+    inContent:    { w: 336, h: 280 },
+    sidebar:      { w: 300, h: 250 },
+    footer:       { w: 728, h: 90  },
+    playerTop:    { w: 728, h: 90  },
+    playerBottom: { w: 728, h: 90  },
+    floatLeft:    { w: 160, h: 600 },
+    floatRight:   { w: 160, h: 600 },
   };
+
+  const FLOAT_SLOTS = ['floatLeft', 'floatRight'];
 
   const rendered = new Set();
   let observer = null;
@@ -105,6 +111,20 @@ window.Ads = (function () {
       renderRealAd(container, name, code);
     } else {
       renderPlaceholder(container, name);
+    }
+
+    /* floating ad gulo te close (x) button — user chaile bondho korte pare */
+    if (FLOAT_SLOTS.indexOf(name) !== -1 && !container.querySelector('.ad-float__close')) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'ad-float__close';
+      btn.innerHTML = '&times;';
+      btn.title = 'Close ad';
+      btn.setAttribute('aria-label', 'Close ad');
+      btn.addEventListener('click', function () {
+        container.style.display = 'none';
+      });
+      container.appendChild(btn);
     }
   }
 

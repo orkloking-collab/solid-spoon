@@ -246,7 +246,7 @@ svg { width: 1em; height: 1em; }
 /* ── Movie grid + card ─────────────────────────────────────────────── */
 .grid--cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
   gap: 18px;
 }
 .card { position: relative; }
@@ -288,9 +288,48 @@ svg { width: 1em; height: 1em; }
 /* ── Ad slots ──────────────────────────────────────────────────────── */
 .ad-slot { margin: 26px auto; text-align: center; }
 .ad-slot--content { margin: 26px 0; }
+.ad-slot--player { margin: 20px 0; }
 .ad-slot--sidebar { margin: 0 0 22px; position: sticky; top: calc(var(--header-h) + 16px); }
 .ad-slot--footer { margin: 40px auto 0; }
 .ad-iframe { max-width: 100%; }
+
+/* ── Floating side ads (dane-bame, sticky) ───────────────────────── */
+.ad-float {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  margin: 0;
+  width: 160px;
+  display: none;               /* only boro screen e dekhabe */
+}
+.ad-float--left  { left: 8px; }
+.ad-float--right { right: 8px; }
+@media (min-width: 1440px) {
+  .ad-float { display: block; }
+}
+.ad-float .ad-placeholder {
+  padding: 20px 10px;
+  max-width: 160px;
+  position: relative;
+}
+.ad-float .ad-placeholder__label { font-size: 11px; line-height: 1.35; }
+.ad-float .ad-placeholder__hint { display: none; }
+.ad-float__close {
+  position: absolute;
+  top: -9px; right: -9px;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #2a3242;
+  color: #fff;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 15px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 5;
+  padding: 0;
+}
+.ad-float__close:hover { background: var(--accent); border-color: var(--accent); }
 
 /* placeholder (code paste na korle) */
 .ad-placeholder {
