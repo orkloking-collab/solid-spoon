@@ -36,7 +36,11 @@
                 '</div>' +
                 '<p class="hero-slide__desc">' + A.esc(m.synopsis) + '</p>' +
                 '<div class="hero-slide__actions">' +
-                  '<a class="btn btn--primary" href="movie.html?id=' + encodeURIComponent(m.id) + '">' +
+                  (m.video && (m.video.embed || m.video.src)
+                    ? '<a class="btn btn--primary" href="movie.html?id=' + encodeURIComponent(m.id) + '#playerSlot">' +
+                      '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg> Watch Now</a>'
+                    : '') +
+                  '<a class="btn ' + (m.video && (m.video.embed || m.video.src) ? 'btn--ghost' : 'btn--primary') + '" href="movie.html?id=' + encodeURIComponent(m.id) + '">' +
                     '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg> View Details</a>' +
                   '<a class="btn btn--ghost" href="movie.html?id=' + encodeURIComponent(m.id) + '#download">Download</a>' +
                 '</div>' +
@@ -165,6 +169,12 @@
     setupTabs();
     setupLiveSearch();
     renderGrid(currentList);
+
+    /* Free movies section — asol video wala legally free movie */
+    const freeGrid = A.$('#freeGrid');
+    if (freeGrid) {
+      freeGrid.innerHTML = A.movies.filter(function (m) { return m.free; }).map(A.movieCard).join('');
+    }
   }
 
   if (document.readyState === 'loading') {

@@ -374,6 +374,32 @@ svg { width: 1em; height: 1em; }
   background: rgba(0, 0, 0, .7); border: 1px solid rgba(255, 255, 255, .18);
   padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
 }
+.player__badge--free {
+  right: auto; left: 12px;
+  background: rgba(34, 197, 94, .85); border-color: rgba(34, 197, 94, .5);
+  color: #04120a; font-weight: 700; letter-spacing: .5px;
+}
+/* real video (iframe / <video>) — player frame e fit */
+.player__frame, .player__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; background: #000;
+}
+.player__video { object-fit: contain; }
+.player-note {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 12.5px; color: var(--muted); margin: 8px 0 0;
+}
+.player-note svg { width: 14px; height: 14px; flex-shrink: 0; opacity: .7; }
+.pill--free {
+  background: rgba(34, 197, 94, .15); border-color: rgba(34, 197, 94, .4);
+  color: #4ade80; font-weight: 700;
+}
+/* card e FREE ribbon */
+.card__thumb .badge--free {
+  top: 8px; right: 8px; left: auto; bottom: auto;
+  background: #22c55e; color: #04120a;
+}
 
 /* synopsis */
 .synopsis { color: #c6cdd9; font-size: 15px; }

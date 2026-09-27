@@ -104,6 +104,7 @@
 
         '<nav class="main-nav" id="mainNav">' +
           '<a href="index.html" class="' + (page === 'index.html' ? 'active' : '') + '">Home</a>' +
+          '<a href="index.html#free" class="' + (page === 'index.html' ? '' : '') + '">Free Movies</a>' +
           '<a href="index.html#latest" class="' + (page === 'index.html' ? '' : '') + '">Latest</a>' +
           '<div class="nav-dropdown">' +
             '<button class="nav-dropdown__btn" type="button">Genres ' +
@@ -159,6 +160,7 @@
         '<div class="footer-col">' +
           '<h4>Quick Links</h4>' +
           '<a href="index.html">Home</a>' +
+          '<a href="index.html#free">Free Movies</a>' +
           '<a href="index.html#latest">Latest Movies</a>' +
           '<a href="index.html#trending">Trending</a>' +
           '<a href="index.html#toprated">Top Rated</a>' +
@@ -194,6 +196,7 @@
           '<img src="' + esc(m.poster) + '" alt="' + esc(m.title) + ' poster" loading="lazy" ' +
             'onerror="this.src=\'assets/img/posters/fallback.svg\'">' +
           '<span class="badge badge--quality">' + esc(m.quality) + '</span>' +
+          (m.free ? '<span class="badge badge--free">FREE</span>' : '') +
           '<span class="badge badge--rating">&#9733; ' + esc(m.rating) + '</span>' +
           '<span class="card__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>' +
         '</a>' +

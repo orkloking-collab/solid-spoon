@@ -41,6 +41,19 @@ const MOVIES = [
   ['bishwanath-the-warrior',    'Bishwanath: The Warrior',   2025, '1080p', ['#4b6cb7', '#182848']],
   ['monsoon-wedding-crashers',  'Monsoon Wedding Crashers',  2025, '720p',  ['#ff9966', '#ff5e62']],
   ['final-mission-delta',       'Final Mission: Delta',      2025, '1080p', ['#603813', '#b29f94']],
+
+  /* real free movies (Internet Archive — PD / CC) */
+  ['night-of-the-living-dead',  'Night of the Living Dead',  1968, '1080p', ['#4b1345', '#c94b4b']],
+  ['nosferatu',                 'Nosferatu',                 1922, '720p',  ['#232526', '#5c0e0e']],
+  ['carnival-of-souls',         'Carnival of Souls',         1962, '720p',  ['#2c3e50', '#4ca1af']],
+  ['the-general',               'The General',               1926, '720p',  ['#3e5151', '#decba4']],
+  ['big-buck-bunny',            'Big Buck Bunny',            2008, '1080p', ['#56ab2f', '#a8e063']],
+  ['sintel',                    'Sintel',                    2010, '1080p', ['#f2994a', '#f2c94c']],
+  ['tears-of-steel',            'Tears of Steel',            2012, '1080p', ['#141e30', '#5f7a8c']],
+  ['cosmos-laundromat',         'Cosmos Laundromat',         2015, '1080p', ['#005c97', '#363795']],
+  ['agent-327',                 'Agent 327',                 2017, '1080p', ['#8e2de2', '#4a00e0']],
+  ['elephants-dream',           'Elephants Dream',           2006, '720p',  ['#0f7b8a', '#36d1dc']],
+  ['spring',                    'Spring',                    2019, '1080p', ['#11998e', '#f7b733']],
 ];
 
 /* ── helpers ─────────────────────────────────────────────────────────── */

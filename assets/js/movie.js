@@ -20,20 +20,52 @@
   }
 
   function playerBlock(m) {
-    return (
-      '<div class="player" id="playerSlot">' +
+    const v = m.video || {};
+    let media;
+
+    if (v.embed) {
+      /* iframe player (Internet Archive embed ba onno kono embed) */
+      media =
+        '<iframe class="player__frame" src="' + A.esc(v.embed) + '" ' +
+          'title="' + A.esc(m.title) + ' player" allowfullscreen ' +
+          'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" ' +
+          'frameborder="0" scrolling="no" loading="lazy"></iframe>';
+    } else if (v.src) {
+      /* direct video file */
+      media =
+        '<video class="player__video" controls playsinline preload="metadata" ' +
+          'poster="' + A.esc(v.poster || m.backdrop) + '">' +
+          '<source src="' + A.esc(v.src) + '" type="' + A.esc(v.type || 'video/mp4') + '">' +
+          'Apnar browser video support kore na.' +
+        '</video>';
+    } else {
+      /* kono video add na korle placeholder */
+      media =
         '<img class="player__poster" src="' + A.esc(m.backdrop) + '" alt="' + A.esc(m.title) + '" loading="lazy">' +
         '<div class="player__overlay">' +
           '<button class="player__btn" type="button" data-player aria-label="Play">' +
             '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>' +
           '</button>' +
           '<p class="player__hint">' +
-            'Player ekhane boshbe &mdash; <code>movie.html</code> er <code>#playerSlot</code> ' +
-            'div er moddhe apnar iframe / &lt;video&gt; / embed code paste korun' +
+            'Video ekhane boshbe &mdash; <code>assets/js/movies.js</code> te ' +
+            '<code>video.embed</code> ba <code>video.src</code> add korun' +
           '</p>' +
-        '</div>' +
+        '</div>';
+    }
+
+    return (
+      '<div class="player" id="playerSlot">' +
+        media +
         '<span class="player__badge">' + A.esc(m.quality) + '</span>' +
-      '</div>'
+        (m.free ? '<span class="player__badge player__badge--free">FREE</span>' : '') +
+      '</div>' +
+      (v.note
+        ? '<p class="player-note">' +
+            '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>' +
+            A.esc(v.note) +
+            (m.license ? ' &bull; License: ' + A.esc(m.license) : '') +
+          '</p>'
+        : '')
     );
   }
 
@@ -156,6 +188,7 @@
           (m.titleBn ? '<p class="movie-head__bn">' + A.esc(m.titleBn) + '</p>' : '') +
           '<div class="movie-head__meta">' +
             '<span class="pill pill--rating">&#9733; ' + A.esc(m.rating) + '/10</span>' +
+            (m.free ? '<span class="pill pill--free">FREE &bull; ' + A.esc(m.license || 'Legal') + '</span>' : '') +
             '<span class="pill">' + A.esc(m.year) + '</span>' +
             '<span class="pill">' + A.esc(m.runtime) + '</span>' +
             '<span class="pill">' + A.esc(m.quality) + '</span>' +

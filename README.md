@@ -91,7 +91,7 @@ korle asol ad chole jabe.
 
 ---
 
-## ⭐ STEP 2 — Movie posts add / edit kora (20 ta post)
+## ⭐ STEP 2 — Movie posts add / edit kora (31 ta post, sob te video)
 
 Sob movie `assets/js/movies.js` file e — ekta array. Notun movie add korte
 notun object add korun:
@@ -111,17 +111,64 @@ notun object add korun:
   views: 1200,
   date: '2026-01-15',                // latest sort er jonno
   featured: true,                    // homepage hero te dekhabe
+  free: true,                        // legally free movie → "Free Movies" section
+  license: 'Public Domain',          // optional license note
   synopsis: 'Movie-r chhoto description...',
   cast: ['Actor 1', 'Actor 2'],
   parts: [                           // download parts (koto tuk cha)
     { label: 'Part 01', quality: '480p', size: '300MB', url: 'https://your-link' },
-    { label: 'Part 02', quality: '480p', size: '300MB', url: 'https://your-link' },
     { label: 'Full Movie', quality: '720p', size: '750MB', url: 'https://your-link' },
   ],
   poster: 'assets/img/posters/amar-notun-movie.jpg',    // nijer image
   backdrop: 'assets/img/backdrops/amar-notun-movie.jpg',
 }
 ```
+
+---
+
+## ⭐ STEP 3 — Video (prottek movie page e asol video cholche)
+
+Prottek movie te **asal video** boshano ache — 31 tar moddhe **11 ta legally
+free movie** (Internet Archive — Public Domain / Creative Commons) asol e chole:
+
+| Movie | Source | License |
+|---|---|---|
+| Night of the Living Dead (1968) | Internet Archive | Public Domain |
+| Nosferatu (1922) | Internet Archive | Public Domain |
+| Carnival of Souls (1962) | Internet Archive | Public Domain |
+| The General (1926) | Internet Archive | Public Domain |
+| Big Buck Bunny, Sintel, Tears of Steel, Cosmos Laundromat, Agent 327, Elephants Dream, Spring | Blender Foundation (via Internet Archive) | CC BY / CC BY-ND |
+
+Baki 20 ta post e **demo video** boshano ache (player ta chole, apni nijer
+video diye replace korben). Sob free movie homepage-e **"Free Movies — Watch
+Now"** section e ache (FREE badge soho).
+
+**Nijer video boshate** — `movies.js` te movie object e `video` field:
+
+```js
+// Option A: iframe embed (Internet Archive, YouTube, apnar host — je kothao)
+video: {
+  embed: 'https://archive.org/embed/night-of-the-living-dead-1968-hd',
+  note: 'Source note — player-er niche chhoto caption'
+},
+
+// Option B: direct video file (mp4 / webm)
+video: {
+  src: 'https://your-site.com/movies/my-movie.mp4',
+  type: 'video/mp4',
+  poster: 'assets/img/backdrops/my-movie.jpg',
+  note: '720p — self hosted'
+}
+```
+
+`video` field na thakle player-e ekta placeholder dekhay ("video ekhane
+boshbe"). Embed ba file — dui tai automatic handle kore, player 16:9 frame e fit hoy.
+
+> ⚠️ **Legal note:** Notun/copyrighted movie (Bollywood, Hollywood, Bangla,
+> anime jemon Naruto/One Piece) er full film link dewa ba embed kora copyright
+> violation — Adsterra o Google site ban/penalty korte pare. Ei site e legally
+> free (Public Domain / CC) content use kora hoyeche. Apnar nijer content hole
+> hosting/payment link use korun.
 
 **Nijer poster use korte:** `assets/img/posters/` folder e image rakhun,
 tarpor `poster` field e path ta din (jpg/png/webp sob cholbe).
