@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0c10">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>MovieBazar — Download Latest Bangla, Hindi &amp; English Movies (720p / 1080p)</title>
+  <meta name="description" content="MovieBazar (মুভি বাজার) — Download latest Bangla, Hindi and English movies in 480p, 720p &amp; 1080p. New posts every day.">
+  <meta name="keywords" content="movie download, bangla movie, hindi movie, 720p, 1080p, moviebazar">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+</head>
+<body>
+
+  <!-- shared header -->
+  <header class="site-header" id="site-header"></header>
+
+  <!-- AD SLOT: homepage-er AKDOM UPORE (hero-r age) -->
+  <div class="container home-top-ad">
+    <div class="ad-slot" data-ad="homeTop"></div>
+  </div>
+
+  <!-- hero slider -->
+  <section class="hero" id="hero"></section>
+
+  <main class="container">
+
+    <!-- AD SLOT 1: header banner -->
+    <div class="ad-slot" data-ad="header"></div>
+
+    <!-- REAL FREE MOVIES — asol video, legally free (PD / CC) -->
+    <section class="section" id="free">
+      <div class="section__head">
+        <h2 class="section__title">Free Movies &mdash; Watch Now</h2>
+        <span class="section__link">Public Domain / Creative Commons &bull; legally free</span>
+      </div>
+      <div class="grid grid--cards" id="freeGrid"></div>
+    </section>
+
+    <!-- latest / trending / toprated -->
+    <section class="section" id="latest">
+      <div class="section__head">
+        <h2 class="section__title">Latest Movies</h2>
+        <div class="tabs" id="listTabs">
+          <button class="tab active" data-tab="latest">Latest</button>
+          <button class="tab" data-tab="trending">Trending</button>
+          <button class="tab" data-tab="toprated">Top Rated</button>
+        </div>
+      </div>
+
+      <!-- genre filter -->
+      <div class="chips" id="genreChips"></div>
+
+      <p class="card__meta" id="resultCount" style="margin-bottom:14px"></p>
+
+      <!-- movie grid (in-grid ad auto-inserted after 8th card) -->
+      <div class="grid grid--cards" id="movieGrid"></div>
+    </section>
+
+    <section class="section" id="trending">
+      <div class="section__head">
+        <h2 class="section__title">Trending This Week</h2>
+        <a class="section__link" href="category.html">View all &rarr;</a>
+      </div>
+      <div class="grid grid--cards" id="trendingGrid"></div>
+    </section>
+
+    <section class="section" id="toprated">
+      <div class="section__head">
+        <h2 class="section__title">Top Rated</h2>
+        <a class="section__link" href="category.html">View all &rarr;</a>
+      </div>
+      <div class="grid grid--cards" id="topRatedGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- shared footer (footer ad slot footer-er moddhe) -->
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <!-- scripts -->
+  <script src="assets/js/config.js?v=3"></script>
+  <script src="assets/js/movies.js?v=3"></script>
+  <script src="assets/js/ads.js?v=3"></script>
+  <script src="assets/js/app.js?v=3"></script>
+  <script src="assets/js/home.js?v=3"></script>
+  <script>
+    /* trending + top rated strip (home page) */
+    (function () {
+      function fill(sel, list) {
+        var el = document.querySelector(sel);
+        if (el) el.innerHTML = list.map(window.App.movieCard).join('');
+      }
+      fill('#trendingGrid', window.App.byViews().slice(0, 6));
+      fill('#topRatedGrid', window.App.byRating().slice(0, 6));
+    })();
+  </script>
+</body>
+</html>

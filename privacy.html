@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0c10">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Privacy Policy — MovieBazar</title>
+  <meta name="description" content="Privacy policy of MovieBazar.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+</head>
+<body>
+
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container prose">
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us. This policy explains what information we collect and
+    how we use it when you visit MovieBazar (মুভি বাজার).</p>
+
+    <h2>Log files</h2>
+    <p>Like most websites, we collect standard server log information such as IP address,
+    browser type, internet service provider, referring/exit pages and timestamps. This data is
+    used only for website administration and analytics.</p>
+
+    <h2>Cookies &amp; third-party ads</h2>
+    <p>We use third-party advertising partners (such as Adsterra) to display ads on this
+    website. These partners may use cookies, JavaScript or web beacons to serve ads based on
+    your prior visits to this and other websites. You can disable cookies anytime through your
+    browser settings.</p>
+    <ul>
+      <li>Google, as a third-party vendor, may use cookies to serve ads based on your visits.</li>
+      <li>Third-party ad networks may collect non-personal information for ad personalization.</li>
+    </ul>
+
+    <h2>External links</h2>
+    <p>Our website contains links to external sites. We are not responsible for the content or
+    privacy practices of those websites.</p>
+
+    <h2>Consent</h2>
+    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+
+    <p>Questions? Email: <strong id="privacyEmail"></strong></p>
+    <p><a class="btn btn--primary" href="index.html">Back to Home</a></p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="assets/js/config.js?v=3"></script>
+  <script src="assets/js/movies.js?v=3"></script>
+  <script src="assets/js/ads.js?v=3"></script>
+  <script src="assets/js/app.js?v=3"></script>
+  <script>
+    document.getElementById('privacyEmail').textContent = window.SITE_CONFIG.site.email;
+  </script>
+</body>
+</html>
