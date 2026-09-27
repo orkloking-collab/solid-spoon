@@ -126,6 +126,19 @@
         toggle.classList.toggle('open');
       });
     }
+
+    /* genres dropdown — phone-e tap kore khulbe (hover kaj kore na) */
+    const dd = el.querySelector('.nav-dropdown');
+    const ddBtn = el.querySelector('.nav-dropdown__btn');
+    if (dd && ddBtn) {
+      ddBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dd.classList.toggle('open');
+      });
+      document.addEventListener('click', function (e) {
+        if (!dd.contains(e.target)) dd.classList.remove('open');
+      });
+    }
   }
 
   /* ── Footer ─────────────────────────────────────────────────────── */

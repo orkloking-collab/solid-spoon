@@ -128,7 +128,7 @@ function posterSVG(title, year, quality, c1, c2) {
     /* year + quality */
     '<rect x="105" y="336" width="90" height="26" rx="13" fill="rgba(0,0,0,.55)"/>' +
     '<text x="150" y="354" text-anchor="middle" font-family="Poppins, Arial, sans-serif" ' +
-      'font-weight="600" font-size="14" fill="#fff">' + year + ' &bull; ' + esc(quality) + '</text>' +
+      'font-weight="600" font-size="14" fill="#fff">' + year + ' \u2022 ' + esc(quality) + '</text>' +
     /* brand */
     '<text x="150" y="404" text-anchor="middle" font-family="Poppins, Arial, sans-serif" ' +
       'font-weight="700" font-size="13" letter-spacing="2" fill="rgba(255,255,255,.75)">MOVIEBAZAR</text>' +
