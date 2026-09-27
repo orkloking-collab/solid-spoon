@@ -19,18 +19,18 @@ window.Ads = (function () {
 
   const cfg = (window.SITE_CONFIG && window.SITE_CONFIG.adsterra) || {};
 
-  /* Slot → recommended ad size (wrapper iframe er jonno) */
+  /* Slot → ad size (wrapper iframe er size — ad kate jabe na) */
   const SLOT_SIZES = {
     homeTop:      { w: 300, h: 250 },
-    header:       { w: 728, h: 90  },
-    native:       { w: 468, h: 60  },
+    header:       { w: 728, h: 250 },
+    native:       { w: 468, h: 250 },
     inContent:    { w: 336, h: 280 },
     sidebar:      { w: 300, h: 250 },
-    footer:       { w: 728, h: 90  },
-    playerTop:    { w: 728, h: 90  },
-    playerBottom: { w: 728, h: 90  },
-    floatLeft:    { w: 160, h: 600 },
-    floatRight:   { w: 160, h: 600 },
+    footer:       { w: 728, h: 250 },
+    playerTop:    { w: 300, h: 250 },
+    playerBottom: { w: 728, h: 250 },
+    floatLeft:    { w: 180, h: 500 },
+    floatRight:   { w: 180, h: 500 },
   };
 
   const FLOAT_SLOTS = ['floatLeft', 'floatRight'];

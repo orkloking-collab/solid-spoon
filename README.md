@@ -65,19 +65,28 @@ window.SITE_CONFIG = {
 };
 ```
 
-**Kothay kothay ad dekhay (9 unit = 9 alada jayga):**
+**Kothay kothay ad dekhay (10 ta slot — SOB SLOT E CODE BOSHANO):**
 
-| # | Slot | Jayga | Page |
+| # | Slot | Jayga | Code |
 |---|------|-------|------|
-| 1 | `header` | Sob theke upore, full-width banner | sob page |
-| 2 | `native` | Movie grid-er majhe (8 number card er por) | homepage + category |
-| 3 | `playerTop` | **Video player-er thik upore** | movie page |
-| 4 | `playerBottom` | **Video player-er thik niche** | movie page |
-| 5 | `inContent` | Content-er moddhe (336×280) | movie page |
-| 6 | `sidebar` | Movie page sidebar (sticky) | movie page |
-| 7 | `floatLeft` | **Screen-er bame floating** (sticky, 160×600, × button soho) | sob page (boro screen) |
-| 8 | `floatRight` | **Screen-er dane floating** (sticky, 160×600, × button soho) | sob page (boro screen) |
-| 9 | `footer` | Footer-er upore | sob page |
+| 1 | `homeTop` | Homepage-er **akdom upore** (hero-r age) | 300×250 |
+| 2 | `header` | Sob page-er sob theke upore | Native Banner |
+| 3 | `native` | Movie grid-er majhe (8 number card er por) | Native Banner |
+| 4 | `playerTop` | **Video player-er thik upore** | 300×250 |
+| 5 | `playerBottom` | **Video player-er thik niche** | Native Banner |
+| 6 | `inContent` | Content-er moddhe (336×280) | 300×250 |
+| 7 | `sidebar` | Movie page sidebar (sticky) | 300×250 |
+| 8 | `floatLeft` | **Screen-er bame floating** (sticky, × button soho) | Native Banner |
+| 9 | `floatRight` | **Screen-er dane floating** (sticky, × button soho) | Native Banner |
+| 10 | `footer` | Footer-er upore | Native Banner |
+
+Plus site-wide: **Popunder** + **Social Bar** (head e), ar **Smartlink**
+(movie page-er "Fast Download" button + placeholder download link).
+
+> **Note:** Ekই ad code onek jaygay reuse kora hoyeche — prottek ad nijer
+> alada iframe document e chole, tai kono problem nai. Adsterra-e notun unit
+> banale `config.js` e oi slot-er `code` change korun. Kono ad bondho korte
+> chaile oi slot-er `code: ''` korun (placeholder dekhabe) ba `enabled: false`.
 
 Code na deya porjonto sob jaygay ekta **dashed placeholder box** dekhay —
 "kothay ad boshbe" bujha jay, layout nosto hoy na. Code paste + `enabled: true`

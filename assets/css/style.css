@@ -302,7 +302,7 @@ svg { width: 1em; height: 1em; }
   transform: translateY(-50%);
   z-index: 90;
   margin: 0;
-  width: 160px;
+  width: 180px;
   display: none;               /* only boro screen e dekhabe */
 }
 .ad-float--left  { left: 8px; }
@@ -312,7 +312,7 @@ svg { width: 1em; height: 1em; }
 }
 .ad-float .ad-placeholder {
   padding: 20px 10px;
-  max-width: 160px;
+  max-width: 180px;
   position: relative;
 }
 .ad-float .ad-placeholder__label { font-size: 11px; line-height: 1.35; }
