@@ -34,7 +34,7 @@ Pure HTML + CSS + JavaScript — **no build step, no framework**. Host anywhere
         ├── backdrops/      20 movie backdrops (SVG placeholders)
         ├── logo.svg
         └── favicon.svg
-└── tools/gen-posters.js    Regenerates poster/backdrop placeholders
+└── tools/gen-posters.js    Regenerates poster/backdrop artwork (genre scenes)
 ```
 
 ---
@@ -185,7 +185,10 @@ boshbe"). Embed ba file — dui tai automatic handle kore, player 16:9 frame e f
 
 **Nijer poster use korte:** `assets/img/posters/` folder e image rakhun,
 tarpor `poster` field e path ta din (jpg/png/webp sob cholbe).
-Placeholder SVG lagbe ki? `node tools/gen-posters.js` chalan.
+Placeholder SVG lagbe ki? `node tools/gen-posters.js` chalan — eta genre
+onujayi asol movie-poster style scene toiri kore (city skyline, jungle,
+ocean, space, horror house, stadium, spy, comedy, animation — 14 rokom
+scene + film grain + vignette + film-strip edge).
 
 **Player add korte:** `movie.html` er `#playerSlot` div er moddhe apnar
 iframe / `<video>` / embed code paste korun (ekhon ekta placeholder dekhay).
