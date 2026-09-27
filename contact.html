@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact / Request a Movie — MovieBazar</title>
+  <meta name="description" content="Contact MovieBazar or request a movie.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container prose">
+    <h1>Contact Us</h1>
+    <p>Movie request, broken link report, ba onno kono message — niche er form ta fill up korun.
+    Amra 24-48 ghonta er moddhe reply kori.</p>
+
+    <form class="form" id="contactForm" novalidate>
+      <label>Your Name
+        <input type="text" name="name" placeholder="Enter your name" required>
+      </label>
+      <label>Your Email
+        <input type="email" name="email" placeholder="Enter your email" required>
+      </label>
+      <label>Subject
+        <select name="subject">
+          <option>Movie Request</option>
+          <option>Broken Link Report</option>
+          <option>DMCA / Copyright</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Message
+        <textarea name="message" placeholder="Write your message…" required></textarea>
+      </label>
+      <button class="btn btn--primary" type="submit">Send Message</button>
+    </form>
+
+    <p style="margin-top:24px">Email: <strong id="contactEmail"></strong></p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/movies.js"></script>
+  <script src="assets/js/ads.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/pages.js"></script>
+  <script>
+    document.getElementById('contactEmail').textContent = window.SITE_CONFIG.site.email;
+  </script>
+</body>
+</html>

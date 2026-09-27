@@ -1,0 +1,9 @@
+# ads.txt — MovieBazar
+# ---------------------------------------------------------------
+# Adsterra dashboard → "Ads.txt" section theke apnar line ta copy kore
+# niche paste korun (niche example deya ache, abar edit korun).
+#
+# Example format:
+# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# adsterra.com, 0000000, DIRECT
+# ---------------------------------------------------------------
